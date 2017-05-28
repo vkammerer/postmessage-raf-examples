@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "An example of using firebase v4 with @vkammerer/postmessage-raf",
   "scripts": {
+    "clean": "find docs | grep '.*\\.js$' | xargs rm",
     "dev": "node_modules/.bin/webpack-dev-server --devtool cheap-module-source-map --content-base docs --watch-content-base",
-    "prod": "node_modules/.bin/webpack --devtool inline-source-map --define process.env.NODE_ENV=\"'production'\""
+    "build": "node_modules/.bin/webpack --devtool inline-source-map --define process.env.NODE_ENV=\"'production'\"",
+    "prod": "npm run clean && npm run build"
   },
   "author": "Vincent Kammerer <vkammerer@gmail.com> (http://vincent-kammerer.com)",
   "license": "MIT",
