@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  padding: 20px;
+}
+
+button {
+  padding: 5px 10px;
+}
+
+#authContainer #loginButton,
+#authContainer.logged #logoutButton {
+  display:inline-block;
+}
+
+#authContainer.logged #loginButton,
+#authContainer #logoutButton {
+  display:none;
+}
