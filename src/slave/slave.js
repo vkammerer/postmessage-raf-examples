@@ -1,17 +1,13 @@
+import { workerMessager } from "@vkammerer/postmessage-raf";
 import { login, logout, listenToAuthChange } from "./firebase";
 
-const onMessage = mE => {
-  const data = JSON.parse(mE.data);
-  console.log("from main: ", data);
-  if (data && data.type) dispatch(data);
-};
-
-const dispatch = action => {
+const onAction = action => {
+  console.log("slave: action", action);
   switch (action.type) {
     case "MAIN_AUTH_LOGGED": {
       return login(action.payload);
     }
-    case "MAIN_AUTH_LOGOUT": {
+    case "MAIN_AUTH_ANONYMOUS": {
       return logout();
     }
     default: {
@@ -20,5 +16,6 @@ const dispatch = action => {
   }
 };
 
-self.addEventListener("message", onMessage);
+export const messager = workerMessager({ onAction });
+
 listenToAuthChange();
