@@ -1,7 +1,7 @@
 {
-  "name": "@vkammerer/postmessage-raf-firebase",
+  "name": "@vkammerer/postmessage-raf-examples",
   "version": "0.0.1",
-  "description": "An example of using firebase v4 with @vkammerer/postmessage-raf",
+  "description": "Examples of @vkammerer/postmessage-raf",
   "scripts": {
     "clean": "find docs | grep '.*\\.js$' | xargs rm",
     "dev": "node_modules/.bin/webpack-dev-server --devtool cheap-module-source-map --content-base docs --watch-content-base",
@@ -11,7 +11,7 @@
   "author": "Vincent Kammerer <vkammerer@gmail.com> (http://vincent-kammerer.com)",
   "license": "MIT",
   "devDependencies": {
-    "@vkammerer/postmessage-raf": "0.0.5",
+    "@vkammerer/postmessage-raf": "0.0.8",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",

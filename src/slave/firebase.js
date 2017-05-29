@@ -1,4 +1,4 @@
-import { messager } from "./slave";
+import { messager } from "./messager";
 import { firebaseConfig } from "../common/firebaseConfig";
 
 self.importScripts("https://www.gstatic.com/firebasejs/4.0.0/firebase.js");
