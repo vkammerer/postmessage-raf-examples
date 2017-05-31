@@ -11,14 +11,14 @@ export const login = () => {
     .signInWithPopup(firebaseFacebookProvider)
     .then(function(result) {
       const accessToken = result.credential.accessToken;
-      window.localStorage.setItem("app_firebaseAccessToken", accessToken);
+      window.localStorage.setItem("APP_firebaseAccessToken", accessToken);
       messager.post({
         type: "MAIN_AUTH_LOGIN_SUCCESS",
         payload: accessToken
       });
     })
     .catch(function(error) {
-      window.localStorage.removeItem("app_firebaseAccessToken");
+      window.localStorage.removeItem("APP_firebaseAccessToken");
       messager.post({
         type: "MAIN_AUTH_LOGIN_ERROR",
         error
@@ -31,13 +31,13 @@ export const logout = () => firebaseAuth.signOut();
 export const listenToAuthChange = () =>
   firebaseAuth.onAuthStateChanged(user => {
     if (user) {
-      const accessToken = window.localStorage["app_firebaseAccessToken"];
+      const accessToken = window.localStorage["APP_firebaseAccessToken"];
       messager.post({
         type: "MAIN_AUTH_LOGGED",
         payload: accessToken
       });
     } else {
-      window.localStorage.removeItem("app_firebaseAccessToken");
+      window.localStorage.removeItem("APP_firebaseAccessToken");
       messager.post({ type: "MAIN_AUTH_ANONYMOUS" });
     }
   });
