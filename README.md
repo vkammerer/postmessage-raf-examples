@@ -1,8 +1,7 @@
 An example of using firebase v4 with @vkammerer/postmessage-raf
 
-The main pain point of using firebase within a web worker is authentication,
-since a worker can't open authentication popups nor have access to authentication data stored in localStorage.   
+Features:
+- Firebase authentication with a web worker (using the nodejs API of firebase in the web worker).   
+- Delayed mouse follower.   
 
-One workaround is to use the nodejs API of firebase in the web worker.
-
-Try it at [vkammerer.github.io/postmessage-raf-firebase](https://vkammerer.github.io/postmessage-raf-firebase).
+Try it at [vkammerer.github.io/postmessage-raf-examples](https://vkammerer.github.io/postmessage-raf-examples/).
